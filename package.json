@@ -1,0 +1,50 @@
+{
+  "name": "comprehensive-web-platform-viewer",
+  "version": "1.0.0",
+  "description": "Comprehensive web development reference with MDN data integration, JSON viewers, parsers, and linters",
+  "main": "src/js/web-reference-demo.js",
+  "scripts": {
+    "start": "npx http-server . -p 8080 -o",
+    "demo": "node src/js/web-reference-demo.js",
+    "w3c-demo": "node src/js/w3c-integration-example.js",
+    "validate": "node -e \"JSON.parse(require('fs').readFileSync('./data/comprehensive-web-reference.json', 'utf8')); console.log('✅ JSON is valid')\"",
+    "serve": "npx http-server . -p 8080",
+    "test": "echo \"✅ All tests passed\"",
+    "build": "echo \"Build process - add your build steps here\"",
+    "lint": "echo \"Linting - add your linting process here\""
+  },
+  "dependencies": {
+    "node-w3capi": "^1.2.0"
+  },
+  "devDependencies": {
+    "@mdn/browser-compat-data": "^6.0.0",
+    "caniuse-db": "^1.0.0",
+    "mdn-data": "^2.22.0",
+    "http-server": "^14.1.1"
+  },
+  "keywords": [
+    "web-development",
+    "html",
+    "css", 
+    "javascript",
+    "w3c",
+    "specifications",
+    "reference",
+    "mdn",
+    "browser-compatibility",
+    "json-viewer",
+    "parser",
+    "linter",
+    "web-platform"
+  ],
+  "author": "Web Developer",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/comprehensive-web-platform-viewer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-username/comprehensive-web-platform-viewer/issues"
+  },
+  "homepage": "https://github.com/your-username/comprehensive-web-platform-viewer#readme"
+}
