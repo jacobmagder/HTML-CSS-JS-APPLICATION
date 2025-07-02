@@ -53,6 +53,68 @@ comprehensive-web-platform-viewer/
 - `npm run w3c-demo` - Run the W3C integration example
 - `npm run validate` - Validate JSON data files
 - `npm run serve` - Serve the application on port 8080
+- `npm run update` - Fetch latest updates from MDN content
+- `npm run merge` - Merge fetched updates
+- `npm run handle-large-changes` - Handle large file changes/deletions
+- `npm run setup-remotes` - Set up remote repositories for updates
+
+## 🔄 Automatic Updates
+
+This project includes automated update handling:
+
+### GitHub Actions Workflows
+
+1. **Auto-update Workflow** (`auto-update.yml`)
+   - Runs daily at 2 AM UTC
+   - Automatically fetches and merges updates from MDN content
+   - Creates pull requests for review
+   - Handles conflict resolution
+
+2. **Large Changes Handler** (`handle-large-changes.yml`)
+   - Detects when PRs have 1000+ file changes or 10,000+ deletions
+   - Automatically analyzes and approves safe content deletions
+   - Flags complex changes for manual review
+
+### Manual Update Process
+
+1. **Set up remotes** (one-time setup):
+   ```bash
+   npm run setup-remotes
+   ```
+
+2. **Fetch updates**:
+   ```bash
+   npm run update
+   ```
+
+3. **Apply updates**:
+   ```bash
+   npm run merge
+   ```
+
+4. **Handle large changes**:
+   ```bash
+   npm run handle-large-changes
+   ```
+
+### Handling 10,000+ Deletions
+
+If you encounter massive file deletions:
+
+1. **Run the handler script**:
+   ```bash
+   ./scripts/handle-large-changes.sh
+   ```
+
+2. **Choose from options**:
+   - Reset to last commit (safest)
+   - Commit deletions in chunks (preserves changes)
+   - Create backup and force push (advanced)
+
+3. **The script will**:
+   - Analyze the changes
+   - Provide recommendations
+   - Handle the changes safely
 
 ## 🚀 Features
 
