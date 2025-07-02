@@ -11,12 +11,7 @@
     "serve": "npx http-server . -p 8080",
     "test": "echo \"✅ All tests passed\"",
     "build": "echo \"Build process - add your build steps here\"",
-    "lint": "echo \"Linting - add your linting process here\"",
-    "update": "git fetch mdn-content main && echo '✅ Updates fetched. Run npm run merge to apply.'",
-    "merge": "git merge mdn-content/main",
-    "handle-large-changes": "./scripts/handle-large-changes.sh",
-    "setup-remotes": "git remote add mdn-content https://github.com/mdn/content.git || echo 'Remote already exists'",
-    "sync-check": "git status --porcelain | wc -l"
+    "lint": "echo \"Linting - add your linting process here\""
   },
   "dependencies": {
     "node-w3capi": "^1.2.0"
